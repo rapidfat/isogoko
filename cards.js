@@ -1,7 +1,5 @@
 
 
-var module = angular.module('cards')
-
 var cardList = {
     'borderVillage':{
       type:'action',
@@ -1386,6 +1384,8 @@ var cardList = {
     }
 };
 
+
+var module = angular.module('cards', [], function(){});
 
 module.factory('$cards', [function(){
   return cardList;
