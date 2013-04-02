@@ -4,10 +4,17 @@
     <!-- supply piles -->
     <div class="ig-supplies">
       <div class="ig-kingdom">
-        <h2>Supply Piles</h2>
         <ul class="ig-kingdom-cards">
-          <li ng-repeat='card in cards.kingdomCards'>
-            
+          <li ng-repeat='costGroup in cards.kingdomCards' class="ig-kingdom-card-group">
+            <ul>
+              <li class="ig-kingdom-card" ng-repeat='card in costGroup'>
+                <div class="ig-left">
+                  <h3>{{card.name}}</h3>
+                  <p>{{card.text}}</p>
+                </div>
+                <div class="ig-icon"></div>
+              </li>
+            </ul>
           </li>
         </ul>
       </div>

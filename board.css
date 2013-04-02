@@ -8,6 +8,11 @@
   text-align:center;
 }
 
+.ig-wrapper li, .ig-wrapper ul{
+  list-style:none;
+  padding:0;
+}
+
 .ig-board{
   position:fixed;
   top:0;
@@ -24,4 +29,42 @@
   width:400px;
   bottom:10px;
   background:cyan;
+}
+
+.ig-kingdom-card{
+  display:inline-block;
+  width:100%;
+  background:lime;
+  margin:1px;
+}
+
+.ig-kingdom-card .ig-left{
+  width:85%;
+  display:inline-block;
+  min-height:50px;
+}
+
+.ig-kingdom-card .ig-icon{
+  float:right;
+  width:14%;
+  height:30px;
+  background:black;
+}
+
+.ig-kingdom-card h3{
+  font-size:12px;
+  margin:0px;
+}
+
+.ig-kingdom-card p{
+  white-space:pre-wrap;
+  font-size:10px;
+  margin:1px;
+}
+
+.ig-kingdom-card-group{
+  border-bottom:1px solid rgba(0,0,0,0.5);
+}
+.ig-kingdom-card-group:last-child{
+  border:none;
 }

@@ -52,6 +52,10 @@ angular.module('isogoko', ['cards'], function(){
         $scope.cards.kingdomCards.push(stack);
       }
     });
+
+    //sort piles
+    $scope.cards.kingdomCards = _($scope.cards.kingdomCards).chain().sortBy('name').groupBy('cost').value();
+    $scope.cards.defaultCards = _($scope.cards.defaultCards).chain().sortBy('cost').groupBy('type').value();
   }
 
   initialize(SETUP_MESSAGE.data);
