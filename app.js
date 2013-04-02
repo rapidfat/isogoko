@@ -8,7 +8,7 @@ angular.element(document).ready(function(){
   angular.bootstrap($app[0], ['isogoko']);
 });
 
-angular.module('isogoko', [], function(){
+angular.module('isogoko', ['cards'], function(){
 })
 
 .directive('board', [function(){
@@ -16,7 +16,8 @@ angular.module('isogoko', [], function(){
   var dir = {
     templateUrl: window.chrome && window.chrome.extension && window.chrome.extension.getURL('board.html') || 'board.html',
     replace:true,
-    restrict:'E'
+    restrict:'E',
+    controller:BoardCtrl
   };
 
   dir.link = function boardLink(scope, element, attrs){
@@ -24,5 +25,17 @@ angular.module('isogoko', [], function(){
   };
 
   return dir;
+
+}])
+
+.controller('BoardCtrl', ['$scope', function($scope){
+
+  $scope.cards = {
+    kingdomCards : {},
+    defaultCards: {}
+  };
+
+
+
 
 }]);
