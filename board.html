@@ -3,14 +3,20 @@
 
     <!-- supply piles -->
     <div class="ig-supplies">
-      <div class="ig-kingdom">
+      <div class="ig-kingdom" ng-init='showInlineCardText=true'>
+        <label for='showCardText'>Show card text</label>
+        <input name='showCardText' type='checkbox' ng-model='showInlineCardText' />
         <ul class="ig-kingdom-cards">
-          <li ng-repeat='costGroup in cards.kingdomCards' class="ig-kingdom-card-group">
+          <li ng-repeat='costGroup in cards.kingdomCardsDisplay' class="ig-kingdom-card-group">
             <ul>
               <li class="ig-kingdom-card" ng-repeat='card in costGroup'>
                 <div class="ig-left">
                   <h3>{{card.name}}</h3>
-                  <p>{{card.text}}</p>
+                  <div class="ig-card-info">
+                    <div class="ig-card-cost">${{card.cost}}</div>
+                    <div class="ig-card-count">({{card.count}})</div>
+                  </div>
+                  <p ng-show='showInlineCardText'>{{card.text}}</p>
                 </div>
                 <div class="ig-icon"></div>
               </li>
