@@ -1,10 +1,9 @@
 {
    "content_scripts": [
      {
-       "js": ["angular.js"],
+       "js": ["jquery-1.9.1.js", "angular.js", "app.js"],
        "run_at": "document_start",
-       "css": [],
-       "web_accessible_resources" : ["board.html"],
+       "css": [],       
        "matches": [
          "http://play.goko.com/Dominion/gameClient.html",
          "https://play.goko.com/Dominion/gameClient.html",
@@ -13,17 +12,15 @@
        ]
      }
    ],
+   "web_accessible_resources" : ["board.html"],
    "permissions": [
      "https://dominion.goko.com/",
      "http://dominion.goko.com/",
      "https://beta.goko.com/",
      "http://beta.goko.com/"
    ],
-   "icons": { "16": "icon16.png",
-           "48": "icon48.png",
-          "128": "icon128.png" },
-   "description": "Goko Log Viewer",
-   "name": "Goko Log Viewer",
-   "version": "0.01",
-   "manifest_version": 1
+   "description": "Isotropic Goko Interface",
+   "name": "Isotropic Goko Interface",
+   "version": "0.101",
+   "manifest_version": 2
 }
